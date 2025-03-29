@@ -1,7 +1,7 @@
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
         # Solved ~ half of it myself
-        # See explanation for Daily Temp (similar problem)
+        # See explanation for Daily Temp (similar problem, however still different)
         
         posSpeed = {}
         stack = []
