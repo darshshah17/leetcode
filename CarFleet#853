@@ -1,0 +1,20 @@
+class Solution:
+    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+        # Solved ~ half of it myself
+        # See explanation for Daily Temp (similar problem)
+        
+        posSpeed = {}
+        stack = []
+
+        for i in range(len(position)):
+            posSpeed[position[i]] = speed[i]
+
+        position = sorted(position, reverse=True)
+
+        for i in range(len(position)):
+            timeCurr = (target - position[i]) / posSpeed[position[i]]
+
+            if len(stack) == 0 or timeCurr > stack[-1]:
+                stack.append(timeCurr)
+
+        return len(stack)
